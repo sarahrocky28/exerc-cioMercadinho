@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mercadinho Express</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <h1>Mercadinho Express</h1>
+
+        <form id="formProduto">
+            <label for="produto">Produto:</label>
+            <input type="text" id="produto" required>
+
+
+
+            <label for="quant">Quantidade:</label>
+            <input type="text" id="quant" required>
+
+
+
+            <label for="preco">Preço</label>
+            <input type="number" id="preco" required>
+
+
+
+            <button type="submit">Adicionar</button>
+        </form>
+
+        <hr>
+
+        <h2>Produtos cadastrados</h2>
+
+        <div id="listaProdutos"></div>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+
+</html>
