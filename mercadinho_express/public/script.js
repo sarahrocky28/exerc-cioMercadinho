@@ -1,4 +1,9 @@
 const form = document.getElementById("formProduto");
+const inputProduto = document.getElementById("produto");
+
+inputProduto.addEventListener("input", () => {
+    inputProduto.value = inputProduto.value.replace(/[0-9]/g, "");
+});
 
 form.addEventListener("submit", async (event) => {
 
@@ -8,6 +13,8 @@ form.addEventListener("submit", async (event) => {
     const quant = document.getElementById("quant").value;
     const preco = document.getElementById("preco").value;
 
+    const total = Number(quant) * Number(preco);
+
     const resposta = await fetch("/produtos", {
         method: "POST",
         headers: {
@@ -16,7 +23,8 @@ form.addEventListener("submit", async (event) => {
         body: JSON.stringify({
             nome: produto,
             quantidade: quant,
-            preco: preco
+            preco: preco,
+            total: total
         })
     });
 
@@ -42,8 +50,10 @@ async function carregarProdutos() {
 
         const item = document.createElement("p");
 
+        item.className = "produto-item";
+
         item.innerHTML = `
-            ${produto.nome} - ${produto.quantidade} un. - R$ ${produto.preco}
+            <span>${produto.nome} - ${produto.quantidade}un. x R$ ${produto.preco} = R$ ${produto.total}</span>
             <button onclick="excluirProduto(${produto.id})">
                 Excluir
             </button>
@@ -67,3 +77,4 @@ async function excluirProduto(id) {
 }
 
 carregarProdutos();
+

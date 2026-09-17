@@ -9,28 +9,32 @@
 
 <body>
     <div class="container">
-        <section>
+        <header>
             <img src="./mercadinho-express-logo.png" alt="" width="200" height="200">
-
-            <form id="formProduto">
+            <h1>Cadastro de produtos</h1>
+        </header>
+        <form id="formProduto">
+            <div class="input">
                 <label for="produto">Produto:</label>
-                <input type="text" id="produto" class="produto" required>
+                <input type="text" id="produto" class="produto" pattern="[A-Za-zÀ-ÿ\s]+" title="Digite apenas letras"
+                    placeholder="Ex: Arroz">
+            </div>
 
 
-
+            <div class="input">
                 <label for="quant">Quantidade:</label>
-                <input type="number" id="quant" class="produto" required>
+                <input type="number" id="quant" class="produto" required placeholder="Ex: 3">
+            </div>
 
 
+            <div class="input">
+                <label for="preco">Preço:</label>
+                <input type="number" id="preco" class="produto" required placeholder="Ex: 3">
+            </div>
 
-                <label for="preco">Preço</label>
-                <input type="number" id="preco" class="produto" required>
+            <button type="submit">Adicionar</button>
 
-
-
-                <button type="submit">Adicionar</button>
-            </form>
-        </section>
+        </form>
 
         <h2>Produtos cadastrados</h2>
 

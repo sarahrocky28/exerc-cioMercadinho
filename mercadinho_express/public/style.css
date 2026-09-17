@@ -63,3 +63,46 @@ section{
     display: flex;
 }
 
+
+.input{
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    display: flex;
+    align-items: center;
+}
+
+h1{
+    padding: 0 10px 0 470px;
+    color: rgb(1, 40, 100);
+}
+
+.produto-item {
+    background-color: #68b96f;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    gap: 10px;
+    margin: 7px;
+}
+
+
+#popup{
+    display:none; 
+    position:fixed; 
+    top:20%; 
+    left:50%; 
+    transform:translateX(-50%);
+     background:#fff; 
+     border:2px solid #c00; 
+     padding:20px; 
+     border-radius:8px; 
+     box-shadow:0 0 10px rgba(0,0,0,.3);
+}
+
+

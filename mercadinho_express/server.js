@@ -22,7 +22,8 @@ app.post("/produtos", (req, res) => {
         id: Date.now(),
         nome: req.body.nome,
         quantidade: req.body.quantidade,
-        preco: req.body.preco
+        preco: req.body.preco,
+        total: req.body.total
     };
 
     produtos.push(novoProduto);
@@ -42,6 +43,7 @@ app.put("/produtos/:id", (req, res) => {
     produto.nome = req.body.nome;
     produto.quantidade = req.body.quantidade;
     produto.preco = req.body.preco;
+    produto.total = req.body.total;
 
     res.json(produto);
 });
@@ -66,3 +68,4 @@ app.delete("/produtos/:id", (req, res) => {
 app.listen(3000, () => {
     console.log("Servidor rodando em http://localhost:3000");
 });
+
